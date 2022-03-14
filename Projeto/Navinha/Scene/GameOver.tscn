@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Script/Game Over.gd" type="Script" id=1]
+[ext_resource path="res://Sprite/FundoG.jpg" type="Texture" id=2]
+[ext_resource path="res://Sons/death.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprite/GameOver.png" type="Texture" id=4]
+[ext_resource path="res://Sprite/Recomecar.png" type="Texture" id=5]
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 182.0
+margin_top = 375.0
+margin_right = 429.0
+margin_bottom = 404.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 105, 304 )
+z_index = -2
+texture = ExtResource( 2 )
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="GameOver" type="Sprite" parent="."]
+position = Vector2( 301, 255 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="Recomecar" type="Sprite" parent="."]
+position = Vector2( 305, 391 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
